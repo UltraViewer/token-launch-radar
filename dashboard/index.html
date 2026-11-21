@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="pulse" aria-hidden="true"></span><h1>Token Radar</h1><span class="ver">model radar-2</span></div>
+  <p class="lede">What a protocol's token would be worth if its record stayed as it is — and how to farm it before it launches. This page ranks protocols that record no token, by an implied value derived from their TVL, seven-day growth and time running with no token.</p>
+  <dl class="stats" id="stats"></dl>
+  <p class="formula" id="formula"></p>
+</header>
+<main>
+  <section class="controls" aria-label="Board controls">
+    <div class="tabs" role="tablist" aria-label="Board or live tokens">
+      <button id="tab-board" role="tab" aria-selected="true">Pre-token board</button>
+      <button id="tab-live" role="tab" aria-selected="false">Already tokenized</button>
+    </div>
+    <label class="field">Search <input id="q" type="search" placeholder="Protocol name or slug" autocomplete="off"></label>
+    <label class="field">Category <select id="category"><option value="">All categories</option></select></label>
+    <label class="field">Chain <select id="chain"><option value="">All chains</option></select></label>
+    <label class="check"><input id="watchlist" type="checkbox"> Watchlist only</label>
+  </section>
+  <section id="detail" aria-live="polite"></section>
+  <section class="tablewrap">
+    <table id="board">
+      <thead><tr id="headrow"></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden>No protocols match these filters.</p>
+  </section>
+  <p class="note">Method: implied value follows from the snapshot's own figures only — TVL, seven-day TVL change and days listed with no token. A protocol is shown as pre-token when its DefiLlama record carries no market cap, CoinGecko id or symbol; that is what the record says, never proof it has no token. The board never predicts whether or when a token is issued, and an implied value is this entry's own claim, never make.fun's. Farm steps are a starting plan, not advice: check the protocol's own site before you send funds. Snapshot: <span id="asof"></span>, source DefiLlama.</p>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
